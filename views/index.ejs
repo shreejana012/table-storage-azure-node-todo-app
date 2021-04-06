@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Todo app</title>
+    <link href="/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Simple Todo app</h2>
+      <form action="/addtask" method="POST">
+        <input type="text" name="newtask" placeholder="add new task" /> <button>Add Task</button>
+        <h2>Added Task</h2>
+        <% for( var i = 0; i < task.length; i++){ %>
+        <li><input type="checkbox" name="check" value="<%= task[i].PartitionKey %>" /> <%= task[i].task %></li>
+        <% } %>
+        <button formaction="/removetask" type="submit">Remove</button>
+      </form>
+    </div>
+  </body>
+</html>
